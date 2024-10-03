@@ -280,12 +280,15 @@
 <script>
 	function descargarConstancia() {
 		const enlaceDescarga = document.createElement('a');
-		enlaceDescarga.href = 'Constancia_de_inscripcion.pdf';
-		enlaceDescarga.download = 'Constancia_de_Inscripción.pdf';
+		enlaceDescarga.href = 'NlBxeGRLckdNZDRtczJ6bzZpNU9Zdz09/constancia_.pdf';
+		const fecha = new Date();
+		const opciones = { year: 'numeric', month: '2-digit', day: '2-digit' };
+		const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones).replace(/\//g, '-'); // Cambia / por -
+		const nombreArchivo = `constancia_${fechaFormateada}.pdf`;
+		enlaceDescarga.download = nombreArchivo;
 		document.body.appendChild(enlaceDescarga);
 		enlaceDescarga.click();
 		document.body.removeChild(enlaceDescarga);
-		window.open(enlaceDescarga.href, '_blank')
 	}
 </script>
 
